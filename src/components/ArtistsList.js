@@ -17,11 +17,11 @@ class ArtistsList extends Component {
       <Container>
             <Row>
             {artists.map(artist => (
-                <Col>
+                <Col key={artist.name}>
                   <Link to={`/artists/${artist.id}/albums`}>
                   <div>
-                    <img src={artist.image} alt={artist.name} key={artist.id} className="img-fluid rounded-circle portraits"/>
-                    <div>{artist.name}</div>
+                    <img src={artist.image} alt={artist.name} className="img-fluid rounded-circle portraits"/>
+                    <p>{artist.name}</p>
                   </div>
                   </Link>
                 </Col>
@@ -37,7 +37,7 @@ ArtistsList.propTypes = {
   artists: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   artists: state.artists
 });
 

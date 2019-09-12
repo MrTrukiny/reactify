@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 
 import { connect } from 'react-redux';
@@ -8,21 +9,22 @@ import PropTypes from 'prop-types';
 class AlbumsList extends Component {
 
   componentDidMount() {
-    this.props.getAlbums(this.props.artistId);
+    this.props.getAlbums(this.props.artistID);
   }
 
   render() {
-    console.log(this.props.artistId)
     const { albums } = this.props.albums;
     return (
       <Container>
         <Row>
           {albums.map(album => (
-            <Col>
-              <div key={album.id}>
-                <img src={album.image} alt={album.name} className="img-fluid rounded-circle portraits"/>
-                <div>{album.name}</div>
-              </div>
+            <Col  key={album.id}>
+							<Link to={`/albums/${album.id}/songs`}>
+								<div>
+									<img src={album.image} alt={album.name} className="img-fluid rounded-circle portraits"/>
+									<div>{album.name}</div>
+								</div>
+							</Link>
             </Col>
           ))}
         </Row>
@@ -37,8 +39,8 @@ AlbumsList.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  albums: state.albums,
-  artistId: ownProps.match.params.id
+	albums: state.albums,
+	artistID: ownProps.match.params.id
 });
 
 export default connect(

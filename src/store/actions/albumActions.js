@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { GET_ALBUMS, ALBUMS_LOADING } from '../actions/types';
 
-export const getAlbums = (id) => dispatch => {
+export const getAlbums = id => dispatch => {
   dispatch(setAlbumsLoading());
   axios
     .get(`/artists/${id}/albums`)

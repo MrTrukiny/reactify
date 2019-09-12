@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import AppNavbar from './components/AppNavbar';
 import ArtistsList from './components/ArtistsList';
 import AlbumsList from './components/AlbumsList';
+import SongsList from './components/SongsList';
+import PlaySong from './components/PlaySong';
 import { Container } from 'reactstrap';
 
 // Redux
@@ -21,8 +23,10 @@ function App() {
           <Container>
             <Switch>
               <Route exact path='/' component={AppNavbar} />
-              <Route path='/artists' component={ArtistsList} />
+              <Route exact path='/artists' component={ArtistsList} />
               <Route path='/artists/:id/albums' component={AlbumsList} />
+							<Route path='/albums/:id/songs' component={SongsList} />
+							<Route path='/playsong' component={PlaySong} />
             </Switch>
           </Container>
         </div>

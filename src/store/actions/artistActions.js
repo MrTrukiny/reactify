@@ -4,7 +4,7 @@ import { GET_ARTISTS, ARTISTS_LOADING } from '../actions/types';
 export const getArtists = () => dispatch => {
   dispatch(setArtistsLoading());
   axios
-    .get('/artists')
+    .get(`/artists`)
       .then(res => 
         dispatch({
           type: GET_ARTISTS,
