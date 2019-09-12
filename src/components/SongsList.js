@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem } from 'reactstrap';
+import { Container, ListGroup, ListGroupItem} from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { getSongs } from '../store/actions/songActions';
@@ -17,7 +18,18 @@ class SongsList extends Component {
       <Container>
 				<ListGroup>
           {songs.map(song => (
-            <ListGroupItem>{song.name}</ListGroupItem>
+            song.preview_url == null 
+              ? 
+                <ListGroupItem>No hay preview de canción</ListGroupItem>
+              : 
+                <Link to={{
+                  pathname: '/playsong',
+                  state: {
+                    url: song.preview_url
+                  }
+                }}>
+                    <ListGroupItem>{song.name}</ListGroupItem>
+                </Link>
           ))}
 				</ListGroup>
       </Container>

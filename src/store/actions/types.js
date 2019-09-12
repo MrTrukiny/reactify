@@ -5,3 +5,4 @@ export const ALBUMS_LOADING = 'ALBUMS_LOADING';
 export const GET_SONGS = 'GET_SONGS';
 export const SONGS_LOADING = 'SONGS_LOADING';
 export const PLAY_SONG = 'PLAY_SONG';
+export const GET_ALL_ARTIST_SONGS = 'GET_ALL_ARTIST_SONGS';

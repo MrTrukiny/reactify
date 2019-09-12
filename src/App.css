@@ -1,3 +1,10 @@
+body {
+  background: #0e0e0e;
+}
+
+.container {
+  background: #151515;
+}
 .remove-btn {
   margin-right: 0.5rem;
 }

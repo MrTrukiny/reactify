@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -29,6 +30,16 @@ class AppNavbar extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className='ml-auto' navbar>
+                <NavItem>
+                  <Link to={'/artists'} style={{textDecoration: 'none'}}>
+                    <NavLink>Artistas</NavLink>
+                  </Link>
+                </NavItem>
+                <NavItem>
+                  <Link to={'/artists'} style={{textDecoration: 'none'}}>
+                    <NavLink>Géneros</NavLink>
+                  </Link>
+                </NavItem>
                 <NavItem>
                   <NavLink href="http://github.com/mrtrukiny">GitHub</NavLink>
                 </NavItem>
