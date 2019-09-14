@@ -1,28 +1,169 @@
+html,
 body {
   background: #0e0e0e;
+  height: 100%;
 }
 
 .container {
   background: #151515;
 }
-.remove-btn {
-  margin-right: 0.5rem;
+
+/* --- Navbar Styles --- */
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  line-height: inherit;
+  white-space: nowrap;
 }
 
-.fade-enter {
-  opacity: 0.01;
+.navbar-toggler {
+  margin-right: 1rem;
+}
+.navbar-nav .nav-link {
+  padding-left: 1rem;
+}
+.nav-link {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
 }
 
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
+/* --- Home Styles --- */
+
+.home-container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: -70px;
+  text-align: center;
 }
 
-.fade-exit {
-  opacity: 1;
+.home-container,
+p,
+h1 {
+  color: rgb(238, 238, 238);
 }
 
-.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 1000ms ease-in;
+.home-container,
+h1 {
+  font-size: 2rem;
+}
+
+.home-container,
+p {
+  font-size: 1.2rem;
+}
+
+.play-song-icon {
+  font-size: 8rem;
+  color: white;
+  cursor: pointer;
+  margin: -30px;
+}
+
+/* ---- Artists and Albums Styles ---- */
+
+.container-artists,
+.container-albums {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: flex-start;
+}
+
+.cover-artist,
+.cover-album {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 10px 20px;
+}
+
+.cover-artist img,
+.cover-album img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.cover-artist a,
+.cover-album a {
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.cover-artist a.centered-link,
+.cover-album a.centered-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container-musicplayer {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* --- Genres and Songs Styles --- */
+
+.container-list {
+  min-height: 70vh;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}
+
+.container-list a {
+  text-decoration: none;
+}
+
+.list-group-item {
+  background: #151515;
+  border-style: none none solid none;
+  border-color: rgba(255, 255, 255, 0.911);
+  border-width: 0.5px;
+  margin-bottom: 0px;
+}
+
+.list-item-text {
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+.song-link {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+/* --- Spinner Styles --- */
+
+.container-loading {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.songs-suggestions {
+  text-align: center;
 }

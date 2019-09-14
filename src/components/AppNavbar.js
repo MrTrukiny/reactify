@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
   Container
-} from 'reactstrap';
+} from "reactstrap";
 
 class AppNavbar extends Component {
   state = {
@@ -24,24 +23,40 @@ class AppNavbar extends Component {
   render() {
     return (
       <div>
-        <Navbar color='dark' dark expand='sm' className='mb-5'>
-          <Container>
-            <NavbarBrand href='/'>Reactify</NavbarBrand>
+        <Navbar color="dark" dark expand="sm" className="mb-5">
+          <Container className="navbar-container">
+            <Link
+              to="/"
+              className="navbar-brand"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              Reactify
+            </Link>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className='ml-auto' navbar>
+              <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <Link to={'/artists'} style={{textDecoration: 'none'}}>
-                    <NavLink>Artistas</NavLink>
+                  <Link
+                    to={"/artists"}
+                    style={{ textDecoration: "none" }}
+                    className="nav-link"
+                  >
+                    Artistas
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <Link to={'/artists'} style={{textDecoration: 'none'}}>
-                    <NavLink>Géneros</NavLink>
+                  <Link
+                    to={"/genres"}
+                    style={{ textDecoration: "none" }}
+                    className="nav-link"
+                  >
+                    Géneros
                   </Link>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="http://github.com/mrtrukiny">GitHub</NavLink>
+                  <NavLink href="https://github.com/MrTrukiny/reactify" target="_blank">
+                    GitHub
+                  </NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
@@ -49,7 +64,7 @@ class AppNavbar extends Component {
         </Navbar>
       </div>
     );
-  };
-};
+  }
+}
 
-export default AppNavbar
+export default AppNavbar;

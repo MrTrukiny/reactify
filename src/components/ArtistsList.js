@@ -1,33 +1,38 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Row, Col } from 'reactstrap';
-import { connect } from 'react-redux';
-import { getArtists } from '../store/actions/artistActions'
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { getArtists } from "../store/actions/artistActions";
+import PropTypes from "prop-types";
 
 class ArtistsList extends Component {
- 
   componentDidMount() {
     this.props.getArtists();
   }
 
-  render(){
-    const { artists } = this.props.artists;
+  render() {
+    const { artists, loading } = this.props.artists;
     return (
-      <Container>
-            <Row>
+      <div className="container">
+        {loading ? (
+          <div className="container-loading">
+            <h1>CARGANDO...</h1>
+          </div>
+        ) : (
+          <div className="container-artists">
             {artists.map(artist => (
-                <Col key={artist.name}>
-                  <Link to={`/artists/${artist.id}/albums`}>
-                  <div>
-                    <img src={artist.image} alt={artist.name} className="img-fluid rounded-circle portraits"/>
-                    <p>{artist.name}</p>
-                  </div>
-                  </Link>
-                </Col>
+              <div className="cover-artist" key={artist.id}>
+                <img src={artist.image} alt={artist.name} />
+                <Link
+                  to={`/artists/${artist.id}/albums`}
+                  className="centered-link"
+                >
+                  {artist.name}
+                </Link>
+              </div>
             ))}
-            </Row>
-      </Container>
+          </div>
+        )}
+      </div>
     );
   }
 }
@@ -37,11 +42,11 @@ ArtistsList.propTypes = {
   artists: PropTypes.object.isRequired
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   artists: state.artists
 });
 
 export default connect(
-  mapStateToProps, 
+  mapStateToProps,
   { getArtists }
-)(ArtistsList)
+)(ArtistsList);

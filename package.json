@@ -10,9 +10,9 @@
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
-    "react-transition-group": "^4.3.0",
     "reactstrap": "^8.0.1",
     "redux": "^4.0.4",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -35,6 +35,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-	},
-	"proxy": "https://rubytify.herokuapp.com/api/v1"
+  },
+  "proxy": "https://rubytify.herokuapp.com/api/v1",
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "react-test-renderer": "^16.9.0"
+  }
 }
