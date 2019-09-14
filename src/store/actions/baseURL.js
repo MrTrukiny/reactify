@@ -1,0 +1,1 @@
+export const baseURL = "https://rubytify.herokuapp.com/api/v1";

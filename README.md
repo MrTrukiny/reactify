@@ -22,7 +22,7 @@ To see the project:
 3. Run `npm start`.
 4. Visit http://localhost:3000/.
 
-Also, you can se the demo here: [Reactify demo](https://experimentality.netlify.com)
+Also, you can se the demo here: [Reactify demo](https://reactify-mrtrukiny.netlify.com)
 
 ## Test
 To test, you must run `npm run test`
